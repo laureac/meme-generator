@@ -1,5 +1,5 @@
 {
-  "homepage": "http://laureac.github.io/meme-generator",
+  "homepage": "https://laureac.github.io/meme-generator/",
   "name": "meme",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
