@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
+import './App.scss';
 
 
 function App(){
@@ -29,10 +29,10 @@ function App(){
      }                  
 
       return(
-          <div>
+          <div className='App'>
             {meme && <img src={meme} alt='your meme'style={{width: 500}}/>}
             {template && (
-            <form onSubmit = {async e =>{
+            <form className='form' onSubmit = {async e =>{
               e.preventDefault(); 
               try {
                   let username = 'laureeee';
@@ -49,15 +49,20 @@ function App(){
                           }
                         }}>
               <img 
-                  src={template.url} style={{width: 200}} 
+                  src={template.url} style={{width: 250}} 
                   key={template.id}
                   alt={template.name}/>
+                <div className='wrapper'>
               <input placeholder='top text'  onChange = {handleChangeTop} />
               <input placeholder='bottom text' onChange = {handleChangeBottom} />
-              <button type='submit'>submit</button>
-              <button onClick={refresh}>return</button>
+              <div className='btn'>
+              <button  type='submit'>submit</button>
+              <button  onClick={refresh}>return</button>
+              </div>
+              </div>
             </form>)}
-            {!template && <h1>Pick a meme</h1>}
+            
+            {!template && <h1>Start with a meme template</h1>}
               {!template &&
               templates.map(template=>{
                   return (<img 
@@ -66,7 +71,6 @@ function App(){
                   src={template.url} 
                   alt={template.name}
                   onClick={()=>{setTemplate(template)
-                    
                   }}
                 />)
                 })
